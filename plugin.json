@@ -1,7 +1,7 @@
 {
 	"plugin": {
 		"name": "Create JSON Plugin",
-		"type": ["core", "ui", "architecture", "binaryview"],
+		"type": ["core", "binaryview"],
 		"api": "python2",
 		"description": "Dumps all functions, basic blocks, and instruction properties into a JSON file.",
 		"longdescription": "This plugin iterates through the binary and extracts the MLIL instructions and properties, storing them in a JSON file.",
