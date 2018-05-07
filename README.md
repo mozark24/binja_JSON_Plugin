@@ -1,13 +1,14 @@
 # Export to JSON Plugin:
 This simple plugin iterates through the binary and extracts the MLIL instructions and properties, storing them in a JSON file in tmp. 
 
-# Disclaimer:
-- This currently runs through all functions instead of only select ones. 
-- TODO:
- - Replace call instruction addresses with symbol names when applicable.
- - Taking suggestions.
+## Disclaimer:
+* This currently runs through all functions instead of only select ones. 
+
+## TODO:
+ * Replace call instruction addresses with symbol names where applicable.
+ * Taking suggestions.
  
-# Example output:
+## Example output:
 ```
 {
     "functions": [
