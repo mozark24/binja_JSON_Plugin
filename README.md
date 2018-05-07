@@ -2,6 +2,7 @@
 This simple plugin iterates through the binary and extracts the MLIL instructions and properties, storing them in a JSON file
 
 # Example output:
+```
 {
     "functions": [
         {
@@ -20,3 +21,4 @@ This simple plugin iterates through the binary and extracts the MLIL instruction
                             "index": 1, 
                             "instr": "eax = 0x40178a(0)"
                         }, 
+```
