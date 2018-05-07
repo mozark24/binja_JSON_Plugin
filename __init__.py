@@ -26,7 +26,7 @@ def invert_dol_nonunique(d):
             newdict.setdefault(v, []).append(k)
     return newdict
 
-def instr_iterator(bv):
+def json_iterator(bv):
 
     filename = "" 
     if bv is None:
@@ -43,16 +43,7 @@ def instr_iterator(bv):
         log.log_to_stdout(True)
 
     #bv = binja.BinaryViewType.get_view_of_file(filename)  # No headless =/
-    
-    # Not sent to JSON log output
-    binja.log_to_stdout(True)
-    binja.log_info("-------- %s --------" % filename)
-    binja.log_info("START: 0x%x" % bv.start)
-    binja.log_info("ENTRY: 0x%x" % bv.entry_point)
-    binja.log_info("ARCH: %s" % bv.arch.name)
-
-    flowgraph = {}
-    
+        
     # TODO:  Insert xrefs of IAT symbols into instructions calling them
     # for function in bv.functions:
     #     flowgraph[function.symbol.name] = []
@@ -72,7 +63,7 @@ def instr_iterator(bv):
             block_result = []
             for instr in block:
                 block_result.append({
-                    'index' : str(instr.instr_index),
+                    'index' : instr.instr_index,
                     'instr' : str(instr),
                     'asm_addr' : str(hex(instr.address)).strip('L')
                 })
@@ -88,17 +79,17 @@ def instr_iterator(bv):
         'functions': list_result
     }
     
-    target_json = json.dumps(flowgraph, default=lambda o: o.__dict__, indent=4, sort_keys=True)
+    json_dump = json.dumps(flowgraph, default=lambda o: o.__dict__, indent=4, sort_keys=True)
     
     try:
         jf = None
         fullpath = os.path.join(tempfile.gettempdir(), 'data.json')
         jf = open(fullpath, "w")
-        jf.write(target_json)
+        jf.write(json_dump)
         jf.close()
     except IOError:
-        print "ERROR: Unable to open/write to /tmp/data.json" #.format(basename(filename))
-        return #target_json
+        print "ERROR: Unable to open/write to {}".format(fullpath)
+        return 
 
 
-PluginCommand.register("Create JSON", "Port all functions, bb, and il", instr_iterator)
+PluginCommand.register("Create JSON", "Port all functions, bb, and il", json_iterator)
