@@ -1,6 +1,6 @@
 {
 	"plugin": {
-		"name": "Create-JSON",
+		"name": "binja_JSON_plugin",
 		"type": ["binaryview"],
 		"api": "python2",
 		"description": "Dumps all functions, basic blocks, and instruction properties into a JSON file.",
@@ -15,7 +15,7 @@
 			"installers": [],
             "other": []
 		},
-		"version": "1.0 alpha",
+		"version": "1.0",
 		"author": "Chris Henry",
 		"minimumBinaryNinjaVersion": {
 			"dev": "1.0.dev-576",
