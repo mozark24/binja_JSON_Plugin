@@ -3,7 +3,10 @@ This simple plugin iterates through the binary and extracts the MLIL instruction
 
 # Disclaimer:
 - This currently runs through all functions instead of only select ones. 
-
+- TODO:
+ - Replace call instruction addresses with symbol names when applicable.
+ - Taking suggestions.
+ 
 # Example output:
 ```
 {
