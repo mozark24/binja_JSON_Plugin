@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-# Author:  Chris Henry
-# Dated: 5 May 2018
-
-# Runs via plugin in Binary Ninja.  Recommend executing after performing Linear Sweep.
-# Dumps all functions, basic blocks, and instruction properties into a JSON file.
-# Instruction level = Medium-Level Intermediate Language (MLIL) resolves
-#   flags, removes nops, resolves stack to variables and eliminates dead stores.
-#   https://docs.binary.ninja/dev/bnil-llil/index.html#low-level-il-instructions
 
 import sys
 import json
@@ -92,4 +84,4 @@ def json_iterator(bv):
         return 
 
 
-PluginCommand.register("Create JSON", "Port all functions, bb, and il", json_iterator)
+PluginCommand.register("Export to JSON", "Port all functions, bb, and il", json_iterator)
