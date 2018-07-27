@@ -34,7 +34,7 @@ This simple plugin iterates through the binary and extracts the MLIL instruction
                             "vars_written": "ecx", 
                             "vars_written_type": "int32_t"
                         }
-                    ], 
+                    ]
                 }
-            ] 
+            ], 
 ```
