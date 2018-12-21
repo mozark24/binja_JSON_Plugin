@@ -1,6 +1,6 @@
 {
 	"plugin": {
-		"name": "binja_JSON_plugin",
+		"name": "MLIL JSON Plugin",
 		"type": ["binaryview"],
 		"api": "python2",
 		"description": "Dumps all MLIL functions, basic blocks, and instruction properties into a JSON file.",
